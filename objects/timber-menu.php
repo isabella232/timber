@@ -18,30 +18,22 @@ class TimberMenu extends TimberCore
     return null;
   }
 
-  function find_parent_item_in_menu($menu_items, $parent_id)
-  {
-    foreach ($menu_items as &$item) {
-      if ($item->ID == $parent_id) {
-        return $item;
-      }
-    }
-    return null;
-  }
-
   function order_children($items)
   {
+    $index = array();
     $menu = array();
-    foreach ($items as $item) {
-      if ($item->menu_item_parent == 0) {
-        $menu[] = new TimberMenuItem($item);
-        continue;
-      }
-      $parent_id = $item->menu_item_parent;
-      $parent = self::find_parent_item_in_menu($menu, $parent_id);
-      if ($parent) {
-        $parent->add_child(new TimberMenuItem($item));
+    foreach($items as $item) {
+      $index[$item->ID] = new TimberMenuItem($item);
+    }
+
+    foreach($index as $item) {
+      if($item->menu_item_parent) {
+        $index[$item->menu_item_parent]->add_child($item);
+      } else {
+        $menu[] = $item;
       }
     }
+
     return $menu;
   }
 
