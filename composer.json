@@ -1,14 +1,12 @@
 {
-    "name": "rebtel/timber",
-    "version": "0.10.4",
-    "description": "A Wordpress timber fork",
-    "authors": [
-        {
-            "name": "Olle Bröms",
-            "email": "olle.broms@rebtel.com"
-        }
-    ],
-    "require": {
-
+  "name": "rebtel/timber",
+  "version": "0.10.5",
+  "description": "A Wordpress timber fork",
+  "authors": [
+    {
+      "name": "Olle Bröms",
+      "email": "olle.broms@rebtel.com"
     }
+  ],
+  "require": {}
 }
