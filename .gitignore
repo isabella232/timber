@@ -1,5 +1,6 @@
 .sass-cache
 twig-cache/*
 .DS_Store
+*.log
 vendor/
 node_modules/

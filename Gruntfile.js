@@ -4,7 +4,8 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		release: {
 			options: {
-				file: 'composer.json'
+				file: 'composer.json',
+				npm: false
 			}
 		}
 	});
