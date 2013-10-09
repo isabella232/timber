@@ -20,6 +20,8 @@ class TimberMenu extends TimberCore
 
   function order_children($items)
   {
+    if(!is_array($items)) return false;
+    
     $index = array();
     $menu = array();
     foreach($items as $item) {
